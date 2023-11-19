@@ -1,0 +1,22 @@
+{% extends 'quote/base.html'%}
+
+{% block content %}
+
+  <h2>Home Page</h2>
+  <br>
+  <a href="{% url 'add_post' %}" class="btn btn-primary">Upload Image</a>
+  <br>
+  <div class="row">
+    {% for post in object_list %}
+    <div class="col-md-4">
+      <p class="card-text">{{ post.title }}</p>
+      <div class="card mb-4 shadow-sm">
+        <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}" width="300" height="350">
+      </div>
+
+    </div> 
+  {% endfor %}
+</div>
+  
+
+{% endblock %}
